@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "typedefs.hpp"
+#include "Util/Typedefs.hpp"
 
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
