@@ -26,19 +26,19 @@ namespace PLSC::Demo
 
         ~Window();
 
-        void       init(i32 x, i32 y);
+        void init(i32 x, i32 y);
 
-        void       setTitle(std::string const & title);
-        void       setTitle(char const * title);
+        void setTitle(std::string const & title);
+        void setTitle(char const * title);
 
         inline i32 width() const { return m_width; }
         inline i32 height() const { return m_height; }
 
-        void       clear();
-        void       swap();
+        void clear();
+        void swap();
 
-        bool       keyQuit();
-        bool       sizeChanged();
+        bool keyQuit();
+        bool sizeChanged();
 
     private:
         inline void _crashIf(const bool condition)

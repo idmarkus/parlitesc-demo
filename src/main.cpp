@@ -12,7 +12,7 @@ int main(int argc, char ** argv)
 
     PLSC::Demo::Window window(1280, 720, 50, 50, false);
 
-    i32                i = 0;
+    i32 i = 0;
     while (!window.keyQuit())
     {
         window.clear();
