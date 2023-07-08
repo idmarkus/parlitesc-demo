@@ -1,0 +1,3 @@
+[submodule "parlitesc"]
+	path = parlitesc
+	url = ../../idmarkus/parlitesc.git
