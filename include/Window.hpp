@@ -32,7 +32,6 @@ namespace PLSC::Demo
         void setTitle(char const * title);
 
         inline i32 width() const { return m_width; }
-
         inline i32 height() const { return m_height; }
 
         void clear();

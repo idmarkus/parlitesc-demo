@@ -10,9 +10,7 @@
 namespace PLSC::Demo
 {
     Window::Window(const i32 width, const i32 height, b vsync) : Window(width, height, 0, 0, vsync) { }
-
     Window::Window(const i32 width, const i32 height) : Window(width, height, 0, 0, false) { }
-
     Window::Window(const i32 width, const i32 height, const i32 x, const i32 y, b vsync) :
         m_width(width), m_height(height), m_sync(vsync)
     {
@@ -76,7 +74,6 @@ namespace PLSC::Demo
     }
 
     void Window::setTitle(const std::string &title) { SDL_SetWindowTitle(m_window, title.c_str()); }
-
     void Window::setTitle(const char * title) { SDL_SetWindowTitle(m_window, title); }
 
     void Window::clear()
