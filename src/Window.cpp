@@ -10,14 +10,15 @@
 namespace PLSC::Demo
 {
     Window::Window(const i32 width, const i32 height, b vsync) : Window(width, height, 0, 0, vsync) { }
+
     Window::Window(const i32 width, const i32 height) : Window(width, height, 0, 0, false) { }
+
     Window::Window(const i32 width, const i32 height, const i32 x, const i32 y, b vsync) :
-        m_width(width),
-        m_height(height),
-        m_sync(vsync)
+        m_width(width), m_height(height), m_sync(vsync)
     {
         init(x, y);
     }
+
     void Window::init(const i32 pos_x, const i32 pos_y)
     {
         _crashIf(SDL_Init(SDL_INIT_EVERYTHING) < 0);
@@ -52,6 +53,7 @@ namespace PLSC::Demo
 
         SDL_StartTextInput();
     }
+
     Window::~Window()
     {
         SDL_StopTextInput();
@@ -72,14 +74,19 @@ namespace PLSC::Demo
         }
         return false;
     }
-    void Window::setTitle(const std::string & title) { SDL_SetWindowTitle(m_window, title.c_str()); }
+
+    void Window::setTitle(const std::string &title) { SDL_SetWindowTitle(m_window, title.c_str()); }
+
     void Window::setTitle(const char * title) { SDL_SetWindowTitle(m_window, title); }
+
     void Window::clear()
     {
         glClearColor(0, 0, 0, 0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
+
     void Window::swap() { SDL_GL_SwapWindow(m_window); }
+
     bool Window::keyQuit()
     {
         SDL_Event e;

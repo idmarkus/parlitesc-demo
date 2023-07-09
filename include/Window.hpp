@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Util/Typedefs.hpp"
+#include "PLSC/Typedefs.hpp"
 
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
@@ -28,10 +28,11 @@ namespace PLSC::Demo
 
         void init(i32 x, i32 y);
 
-        void setTitle(std::string const & title);
+        void setTitle(std::string const &title);
         void setTitle(char const * title);
 
         inline i32 width() const { return m_width; }
+
         inline i32 height() const { return m_height; }
 
         void clear();
@@ -49,6 +50,7 @@ namespace PLSC::Demo
                 _exitFailure();
             }
         }
+
         inline void _exitFailure()
         {
             if (m_window != nullptr) SDL_DestroyWindow(m_window);
