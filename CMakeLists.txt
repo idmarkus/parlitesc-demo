@@ -10,6 +10,13 @@ if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     set(CMAKE_CXX_STANDARD 20)
 endif ()
 
+# -flto
+include(CheckIPOSupported)
+check_ipo_supported(RESULT result)
+if (result)
+    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+endif ()
+
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(SDL2 CONFIG REQUIRED)
@@ -22,12 +29,15 @@ endif ()
 
 add_subdirectory(parlitesc)
 
+
 target_link_libraries(PLSCDemo
         PRIVATE
         PLSC
         $<TARGET_NAME_IF_EXISTS:SDL2::SDL2MAIN>
         $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
-
+        PUBLIC
         ${OPENGL_LIBRARIES}
         ${GLEW_LIBRARIES}
+        PRIVATE
+        PLSCGL
         )
